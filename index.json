@@ -50,7 +50,7 @@
       "entrypoint": "main.py",
       "version": "1.0.0",
       "author": "berth-team",
-      "pro_only": true,
+      "pro_only": false,
       "featured": true,
       "env_vars": [
         { "key": "PORT", "description": "Server port", "required": false, "default": "8000" },
@@ -103,7 +103,7 @@
       "entrypoint": "bot.py",
       "version": "1.0.0",
       "author": "berth-team",
-      "pro_only": true,
+      "pro_only": false,
       "featured": false,
       "env_vars": [
         { "key": "TELEGRAM_BOT_TOKEN", "description": "Your Telegram bot token from @BotFather", "required": true, "default": null }
@@ -120,7 +120,7 @@
       "entrypoint": "main.py",
       "version": "1.0.0",
       "author": "berth-team",
-      "pro_only": true,
+      "pro_only": false,
       "featured": false,
       "env_vars": [
         { "key": "OPENAI_API_KEY", "description": "Your OpenAI API key", "required": true, "default": null },
@@ -139,7 +139,7 @@
       "entrypoint": "main.py",
       "version": "1.0.0",
       "author": "berth-team",
-      "pro_only": true,
+      "pro_only": false,
       "featured": true,
       "env_vars": [
         { "key": "OPENAI_API_KEY", "description": "Your OpenAI API key for embeddings and completions", "required": true, "default": null },
