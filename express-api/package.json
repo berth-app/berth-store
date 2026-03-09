@@ -1,0 +1,13 @@
+{
+  "name": "berth-express-api",
+  "version": "1.0.0",
+  "description": "Minimal Express.js REST API starter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "cors": "^2.8.5"
+  }
+}

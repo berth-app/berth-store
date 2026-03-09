@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "updated_at": "2026-03-09T00:00:00Z",
+  "categories": [
+    { "id": "scrapers", "name": "Web Scrapers", "icon": "globe" },
+    { "id": "api-servers", "name": "API Servers", "icon": "server" },
+    { "id": "bots", "name": "Bots & Automation", "icon": "bot" },
+    { "id": "ai-ml", "name": "AI & ML", "icon": "brain" }
+  ],
+  "templates": [
+    {
+      "id": "hn-scraper",
+      "name": "Hacker News Scraper",
+      "description": "Scrapes top stories from Hacker News and saves to JSON. Configurable number of stories and output format.",
+      "category": "scrapers",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": true,
+      "env_vars": [],
+      "tags": ["scraping", "hackernews", "python", "json"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "price-monitor",
+      "name": "Price Monitor",
+      "description": "Monitors product prices from URLs and alerts when prices drop below a threshold. Great for scheduled runs.",
+      "category": "scrapers",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": false,
+      "env_vars": [
+        { "key": "MONITOR_URLS", "description": "Comma-separated list of product URLs to monitor", "required": false, "default": null },
+        { "key": "PRICE_THRESHOLD", "description": "Alert when price drops below this value", "required": false, "default": "50.00" }
+      ],
+      "tags": ["scraping", "monitoring", "prices", "alerts"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "fastapi-starter",
+      "name": "FastAPI Starter",
+      "description": "Production-ready FastAPI server with health check, CORS, structured logging, and example CRUD endpoints.",
+      "category": "api-servers",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": true,
+      "featured": true,
+      "env_vars": [
+        { "key": "PORT", "description": "Server port", "required": false, "default": "8000" },
+        { "key": "LOG_LEVEL", "description": "Logging level (debug, info, warning, error)", "required": false, "default": "info" }
+      ],
+      "tags": ["fastapi", "api", "rest", "python", "server"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "express-api",
+      "name": "Express API",
+      "description": "Minimal Express.js REST API with health check, JSON body parsing, CORS, and example routes.",
+      "category": "api-servers",
+      "runtime": "node",
+      "entrypoint": "index.js",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": false,
+      "env_vars": [
+        { "key": "PORT", "description": "Server port", "required": false, "default": "3000" }
+      ],
+      "tags": ["express", "api", "rest", "node", "server"],
+      "files": ["index.js", "package.json"]
+    },
+    {
+      "id": "discord-bot",
+      "name": "Discord Bot",
+      "description": "Simple Discord bot with slash commands, event handling, and a modular command structure.",
+      "category": "bots",
+      "runtime": "node",
+      "entrypoint": "bot.js",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": true,
+      "env_vars": [
+        { "key": "DISCORD_TOKEN", "description": "Your Discord bot token from the Developer Portal", "required": true, "default": null },
+        { "key": "CLIENT_ID", "description": "Your Discord application client ID", "required": true, "default": null }
+      ],
+      "tags": ["discord", "bot", "chat", "automation"],
+      "files": ["bot.js", "package.json"]
+    },
+    {
+      "id": "telegram-bot",
+      "name": "Telegram Bot",
+      "description": "Telegram bot with command handlers, inline keyboards, and webhook support. Ready for long-polling or webhook mode.",
+      "category": "bots",
+      "runtime": "python",
+      "entrypoint": "bot.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": true,
+      "featured": false,
+      "env_vars": [
+        { "key": "TELEGRAM_BOT_TOKEN", "description": "Your Telegram bot token from @BotFather", "required": true, "default": null }
+      ],
+      "tags": ["telegram", "bot", "chat", "automation"],
+      "files": ["bot.py", "requirements.txt"]
+    },
+    {
+      "id": "openai-chat",
+      "name": "OpenAI Chat Wrapper",
+      "description": "Simple HTTP API that wraps OpenAI chat completions. Supports streaming, system prompts, and conversation history.",
+      "category": "ai-ml",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": true,
+      "featured": false,
+      "env_vars": [
+        { "key": "OPENAI_API_KEY", "description": "Your OpenAI API key", "required": true, "default": null },
+        { "key": "MODEL", "description": "OpenAI model to use", "required": false, "default": "gpt-4o-mini" },
+        { "key": "PORT", "description": "Server port", "required": false, "default": "8080" }
+      ],
+      "tags": ["openai", "chat", "ai", "llm", "api"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "rag-pipeline",
+      "name": "RAG Pipeline",
+      "description": "Retrieval-Augmented Generation pipeline with document ingestion, vector search, and LLM-powered Q&A.",
+      "category": "ai-ml",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": true,
+      "featured": true,
+      "env_vars": [
+        { "key": "OPENAI_API_KEY", "description": "Your OpenAI API key for embeddings and completions", "required": true, "default": null },
+        { "key": "DOCS_DIR", "description": "Directory containing documents to ingest", "required": false, "default": "./docs" }
+      ],
+      "tags": ["rag", "embeddings", "vector-search", "ai", "llm"],
+      "files": ["main.py", "requirements.txt"]
+    }
+  ]
+}

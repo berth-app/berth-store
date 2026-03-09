@@ -1,0 +1,12 @@
+{
+  "name": "berth-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot with slash commands",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.0"
+  }
+}
