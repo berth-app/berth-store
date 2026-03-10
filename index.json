@@ -147,6 +147,25 @@
       ],
       "tags": ["rag", "embeddings", "vector-search", "ai", "llm"],
       "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "ai-news-digest",
+      "name": "Daily AI News Digest",
+      "description": "Fetches today's top tech and AI news via Perplexity AI and sends a formatted digest to Telegram. Schedule with @daily for a morning briefing.",
+      "category": "ai-ml",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": true,
+      "env_vars": [
+        { "key": "PERPLEXITY_API_KEY", "description": "Your Perplexity API key from perplexity.ai/settings/api", "required": true, "default": null },
+        { "key": "TELEGRAM_BOT_TOKEN", "description": "Your Telegram bot token from @BotFather", "required": true, "default": null },
+        { "key": "TELEGRAM_CHAT_ID", "description": "Telegram chat or channel ID to send the digest to", "required": true, "default": null }
+      ],
+      "tags": ["perplexity", "telegram", "news", "ai", "digest", "scheduled"],
+      "files": ["main.py", "requirements.txt"]
     }
   ]
 }
