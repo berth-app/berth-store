@@ -5,7 +5,8 @@
     { "id": "scrapers", "name": "Web Scrapers", "icon": "globe" },
     { "id": "api-servers", "name": "API Servers", "icon": "server" },
     { "id": "bots", "name": "Bots & Automation", "icon": "bot" },
-    { "id": "ai-ml", "name": "AI & ML", "icon": "brain" }
+    { "id": "ai-ml", "name": "AI & ML", "icon": "brain" },
+    { "id": "agents", "name": "AI Agents", "icon": "bot" }
   ],
   "templates": [
     {
@@ -165,6 +166,65 @@
         { "key": "TELEGRAM_CHAT_ID", "description": "Telegram chat or channel ID to send the digest to", "required": true, "default": null }
       ],
       "tags": ["perplexity", "telegram", "news", "ai", "digest", "scheduled"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "claude-agent",
+      "name": "Claude Agent",
+      "description": "An autonomous agent that runs on your own machine. Give it a task; it works to completion using a bash tool and file read/write, streaming its full transcript and token cost to the logs. Your task and its output never leave your infrastructure.",
+      "category": "agents",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": true,
+      "env_vars": [
+        { "key": "ANTHROPIC_API_KEY", "description": "Your Anthropic API key from console.anthropic.com", "required": true, "default": null },
+        { "key": "AGENT_TASK", "description": "What you want the agent to do (a plain-English task)", "required": true, "default": null },
+        { "key": "AGENT_MODEL", "description": "Claude model id", "required": false, "default": "claude-opus-4-8" },
+        { "key": "AGENT_MAX_TURNS", "description": "Safety cap on agent loop iterations", "required": false, "default": "40" }
+      ],
+      "tags": ["claude", "agent", "autonomous", "ai", "anthropic"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "pr-review-agent",
+      "name": "PR Review Agent",
+      "description": "Claude reviews your open pull requests on a schedule. Each run it checks a GitHub repo for PRs it hasn't seen, reads the diff, and posts review comments — a tireless first-pass reviewer running on your own hardware. Schedule with @hourly.",
+      "category": "agents",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": true,
+      "env_vars": [
+        { "key": "ANTHROPIC_API_KEY", "description": "Your Anthropic API key from console.anthropic.com", "required": true, "default": null },
+        { "key": "GITHUB_TOKEN", "description": "GitHub token with repo access (github.com/settings/tokens)", "required": true, "default": null },
+        { "key": "GITHUB_REPO", "description": "Repository to review, as owner/name (e.g. berth-app/berth)", "required": true, "default": null },
+        { "key": "DRY_RUN", "description": "Set to true to print reviews instead of posting them", "required": false, "default": "false" }
+      ],
+      "tags": ["claude", "agent", "github", "code-review", "scheduled"],
+      "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "research-agent",
+      "name": "Research Agent",
+      "description": "A standing research briefing, written by Claude. Give it a topic; it uses live web search to gather current information and writes a dated markdown report. Schedule with @daily to track a competitor, technology, or market.",
+      "category": "agents",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": false,
+      "env_vars": [
+        { "key": "ANTHROPIC_API_KEY", "description": "Your Anthropic API key from console.anthropic.com", "required": true, "default": null },
+        { "key": "RESEARCH_TOPIC", "description": "What to research (e.g. developments in NATS messaging)", "required": true, "default": null },
+        { "key": "RESEARCH_MAX_SEARCHES", "description": "Cap on web searches per run", "required": false, "default": "8" }
+      ],
+      "tags": ["claude", "agent", "research", "web-search", "scheduled"],
       "files": ["main.py", "requirements.txt"]
     }
   ]
