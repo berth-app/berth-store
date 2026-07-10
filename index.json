@@ -226,6 +226,26 @@
       ],
       "tags": ["claude", "agent", "research", "web-search", "scheduled"],
       "files": ["main.py", "requirements.txt"]
+    },
+    {
+      "id": "openrouter-agent",
+      "name": "OpenRouter Agent",
+      "description": "An autonomous agent that works to any goal — with any model. One OpenRouter key gives you Claude, GPT, Gemini, Llama, and hundreds more; set OPENROUTER_MODEL to pick. Same bash + file tools as the Claude Agent, running on your own machine.",
+      "category": "agents",
+      "runtime": "python",
+      "entrypoint": "main.py",
+      "version": "1.0.0",
+      "author": "berth-team",
+      "pro_only": false,
+      "featured": false,
+      "env_vars": [
+        { "key": "OPENROUTER_API_KEY", "description": "Your OpenRouter API key from openrouter.ai/keys", "required": true, "default": null },
+        { "key": "AGENT_TASK", "description": "What you want the agent to do (a plain-English task)", "required": true, "default": null },
+        { "key": "OPENROUTER_MODEL", "description": "Any model id from openrouter.ai/models", "required": false, "default": "anthropic/claude-sonnet-4.5" },
+        { "key": "AGENT_MAX_TURNS", "description": "Safety cap on agent loop iterations", "required": false, "default": "40" }
+      ],
+      "tags": ["openrouter", "agent", "autonomous", "ai", "multi-model"],
+      "files": ["main.py", "requirements.txt"]
     }
   ]
 }
